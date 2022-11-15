@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Accessible HTML Usage</title>
+
+    <style>
+        .visually-hidden,
+        .screen-reader-text {
+            position: absolute !important;
+            width: 1px !important;
+            height: 1px !important;
+            padding: 0 !important;
+            margin: -1px !important;
+            overflow: hidden !important;
+            clip: rect(0, 0, 0, 0) !important;
+            white-space: nowrap !important;
+            border: 0 !important;
+        }
+
+        @media (prefers-reduced-motion) {
+            .animation {
+                animation: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <a href="#main">Jump to main content</a>
+        <nav class="menu" role="navigation">
+            <a href="/">
+                <img src="/images/company-logo.png" alt="Link to Company XYZ Homepage">
+            </a>
+            <h1 class="screen-reader-text">Company XYZ</h1>
+            <ul class="main-menu">
+                <li>Home</li>
+                <li>Products</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+            <button class="dropdown-toggle" type="button" aria-controls="mobileDropdown" aria-expanded="false">
+                <span class="dropdown-toggle-icon" aria-hidden="true"><i class="bi bi-list"></i></span>
+                <span class="screen-reader-text">Open Mobile Menu</span>
+            </button>
+        </nav>
+        <div class="collapse" id="mobileDropdown">
+            <div class="bg-dark p-4">
+                <p id="menu-title" class="text-white h4">Mobile Menu</p>
+                <ul aria-labelledby="menu-title">
+                    <li>Home</li>
+                    <li>Products</li>
+                    <li>Services</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+        </div>
+        <span class="search-icon" role="button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+                viewBox="0 0 16 16">
+                <path
+                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+            </svg>
+            <span class="visually-hidden">Activate site search</span>
+        </span>
+        <form action="search.php" role="search">
+            <p class="form-error">The input is not valid. It must not be empty!</p>
+            <label class="visually-hidden" for="search-input">Search our Site</label>
+            <input id="search-input" type="search" required>
+            <input class="visually-hidden" type="submit" value="Submit">
+        </form>
+    </header>
+
+    <main id="main" role="main">
+        <article>
+            <header>
+                <h1>Accessible HTML Usage</h1>
+            </header>
+
+            <div class="about">
+                <p>Here is some basic info about XYZ Company....</p>
+                <img src="/images/decorative-image.png" alt="">
+            </div>
+        </article>
+
+        <section class="form-example">
+            <form action="">
+                <label for="firstName">First Name</label>
+                <input id="firstName" type="text">
+
+                <label for="lastName">Last Name</label>
+                <input id="lastName" type="text">
+
+                <label for="email">Email Address</label>
+                <input id="email" type="email">
+
+                <label id="phone-label" for="phone">Phone Number</label>
+                <span>
+                    <input id="phone" type="text" aria-labelledby="phone-label" aria-describedby="phone-format">
+                    <span id="phone-format">(###) ###-####</span>
+                </span>
+                <fieldset>
+                    <legend>Preferred Contact</legend>
+                    <div>
+                        <input type="radio" name="preferred-contact" id="email" value="email" checked>
+                        <label for="email">Email Me</label>
+                    </div>
+                    <div>
+                        <input type="radio" name="preferred-contact" id="phone" value="phone">
+                        <label for="phone">Call Me</label>
+                    </div>
+                </fieldset>
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" role="textbox"></textarea>
+                <input type="submit" value="submit">
+
+            </form>
+        </section>
+        <section class="button-example">
+            <p>123 Address St.
+                <br />Anytown, USA
+            </p>
+            <a href="#" role="button">Show More Contact Info</a>
+            <span class="visually-hidden">More Contact Information about XYZ Company</span>
+        </section>
+
+        <section class="accordion-example">
+            <div class="accordion">
+                <h2>Facts about XYZ Company</h2>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingOne">
+                        <button class="accordion-button" aria-expanded="true" aria-controls="collapseOne">
+                            We're The Best
+                        </button>
+                    </h3>
+                    <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
+                        <div class="accordion-body">
+                            We are, of course, the best at everything.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingTwo">
+                        <button class="accordion-button collapsed" type="button" aria-expanded="false"
+                            aria-controls="collapseTwo">
+                            We Do Good Work
+                        </button>
+                    </h3>
+                    <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                        data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                            Lots of information about why we do good work.
+                            <a href="#" class="btn btn-blue">
+                                Learn More
+                                <span class="visuall-hidden">Visit our about page to learn more about what we do.</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="table-example">
+            <table>
+                <caption>Delivery Times:</caption>
+                <tr>
+                    <td></td>
+                    <th scope="col">Monday</th>
+                    <th scope="col">Tuesday</th>
+                    <th scope="col">Wednesday</th>
+                    <th scope="col">Thursday</th>
+                    <th scope="col">Friday</th>
+                </tr>
+                <tr>
+                    <th scope="row">09:00 - 11:00</th>
+                    <td>Closed</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <th scope="row">11:00 - 13:00</th>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+        </section>
+    </main>
+    <aside role="complementary">
+        <img src="/images/small-cat.jpg" alt="Small cat playing on the floor with a large ball of yarn">
+        <h2>Latest Blog Posts</h2>
+        <menu>
+            <li><a href="#">We're Hiring</a></li>
+            <li><a href="#">Don't Miss Out</a></li>
+            <li><a href="#">How We Do What We Do</a></li>
+        </menu>
+    </aside>
+    <footer>
+        <h2 class="visually-hidden">Footer</h2>
+        <h3>Contact US</h3>
+        <p>This is our location</p>
+        <p>Phone number</p>
+
+        <h3>Our Location</h3>
+        <p>This is our location</p>
+        <p>Phone number</p>
+    </footer>
+</body>
+
+</html>

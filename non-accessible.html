@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+<head>
+</head>
+
+<body>
+    <div class="header">
+        <div class="menu">
+            <a href="/">
+                <img src="/images/company-logo.png" alt="Logo for the company">
+            </a>
+            <ul class="desktop-menu">
+                <li>Products</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </div>
+        <span class="menubutton"><i class="bi bi-list"></i></span>
+        <ul class="mobile-menu">
+            <li>Products</li>
+            <li>Services</li>
+            <li>Contact</li>
+        </ul>
+        <span class="search-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+            </svg>
+        </span>
+        <form action="search.php">
+            <input class="search-input" placeholder="Search our Site">
+        </form>
+    </div>
+
+    <div class="main">
+        <div>
+            <div class="header">
+                <h2>Inaccessible HTML Usage</h2>
+            </div>
+        </div>
+
+        <div class="about">
+            <h3>About XYZ Company</h3>
+            <p>Here is some basic info about XYZ Company</p>
+            <img src="/images/decorative-image.png">
+        </div>
+
+        <div class="form-contact">
+            <h2>Contact Us</h2>
+            <form action="">
+                <input id="firstName" type="text" placeholder="First Name">
+                <input id="lastName" type="text" placeholder="Last Name">
+                <input id="email" type="email" placeholder="Email Address">
+                <input id="phone" type="text" placeholder="Phone Number">
+                <label>Preferred Contact</label>
+                <div>
+                    <input type="radio" name="preferred-contact" value="email" checked>
+                    <label>Email Me</label>
+                </div>
+                <div>
+                    <input type="radio" name="preferred-contact" value="phone">
+                    <label>Call Me</label>
+                </div>
+                <textarea name="message" id="message" cols="30" rows="10">Tell us what you think!</textarea>
+                <input type="submit" value="submit">
+            </form>
+        </div>
+
+        <div class="show-contact-info">
+            <p>123 Address St.
+            <br/>Anytown, USA</p>
+            <a href="#">Show contact Info</a>
+            <p style="display: none;">More Contact information</p>
+        </div>
+
+        <div class="accordion">
+            <h1>Facts about XYZ Company</h1>
+            <div id="accordion__wrapper">
+                <div class="accordion__button">
+                    We're The Best
+                </div>
+                <div class="accordion__content" style="display: block;">
+                    We are, of course, the best at everything.
+                </div>
+                <div class="accordion__button">
+                    We Do Good Work
+                </div>
+                <div class="accordion__content" style="display: none;">
+                    Lots of information about why we do good work.
+                    <a href="btn btn-blue">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="table">
+            <table>
+                <span>Delivery Times:</span>
+                <tr>
+                    <td></td>
+                    <td>Monday</td>
+                    <td>Tuesday</td>
+                    <td>Wednesday</td>
+                    <td>Thursday</td>
+                    <td>Friday</td>
+                </tr>
+                <tr>
+                    <td>09:00 - 11:00</td>
+                    <td>Closed</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+                <tr>
+                    <td>11:00 - 13:00</td>
+                    <td>Open</td>
+                    <td>Open</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                    <td>Closed</td>
+                </tr>
+            </table>
+        </div>
+        <div class="sidebar">
+            <div class="sidebar-menu">
+                <li><a href="#">We're Hiring</a></li>
+                <li><a href="#">Don't Miss Out</a></li>
+                <li><a href="#">How We Do What We Do</a></li>
+            </div>
+        </div>
+        <div class="footer">
+            <h5>Contact US</h5>
+            <p>This is our location</p>
+            <p>Phone number</p>
+        </div>
+    </div>
+</body>
+
+</html>
